@@ -1,9 +1,7 @@
-"use client";
-
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { H2, Lead } from "@/components/ui/Typography";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client"
 import { Mail } from "lucide-react";
 import Link from "next/link";
 

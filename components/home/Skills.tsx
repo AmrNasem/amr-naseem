@@ -1,35 +1,43 @@
-"use client";
-
 import { Container } from "@/components/ui/Container";
 import { H2, H3 } from "@/components/ui/Typography";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client"
 
 const skillCategories = [
   {
     title: "Core",
     skills: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "TypeScript",
       "React",
       "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Redux Toolkit",
+      "Zustand",
+      "Context API",
     ],
   },
   {
     title: "Styling & UI",
     skills: [
+      "CSS3",
       "Tailwind CSS",
-      "Sass",
+      "Bootstrap",
       "Framer Motion",
-      "Shadcn UI",
       "Responsive Design",
     ],
   },
   {
-    title: "Backend & Tools",
-    skills: ["Node.js", "MySQL", "PHP", "Git", "Docker Basics", "Vercel"],
+    title: "Tools",
+    skills: ["Git", "GitHub", "VS Code", "Cursor", "Vercel", "Postman", "Vite"],
   },
+
+  {
+    title: "Backend",
+    skills: ["Node.js", "Mongoose", "Express", "REST API"],
+  },
+  // {
+  //   title: "Core",
+  //   skills: ["Data Structures", "Algorithms", "OOP", "System Design"],
+  // },
 ];
 
 export function Skills() {

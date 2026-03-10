@@ -1,25 +1,26 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/Button";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Projects", href: "/#projects" }, // Anchor link for home section initially
+  { name: "Projects", href: "/projects" }, // Anchor link for home section initially
   { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -37,7 +38,7 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="font-bold text-xl tracking-tight">
-            Amr Naseem
+            <Image src="/logo.png" alt="Amr Naseem" width={50} height={50} />
           </Link>
         </div>
 
@@ -66,7 +67,7 @@ export function Header() {
             className="hidden md:flex"
             asChild
           >
-            <a href="/resume.pdf" download>
+            <a href="/Resume - Amr Naseem.pdf" download>
               Resume
             </a>
           </Button>

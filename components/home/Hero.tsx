@@ -1,17 +1,32 @@
-"use client";
-
+import * as motion from "motion/react-client"
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { H1, Lead } from "@/components/ui/Typography";
-import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center py-12 md:py-24 lg:py-32">
-      <Container>
-        <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
+      <Container className="flex flex-col-reverse lg:grid grid-cols-5 gap-4 lg:mt-0">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full aspect-square mt-8 lg:mt-0 max-w-[80%] mx-auto col-span-2 rounded-full overflow-hidden relative"
+        >
+          <div className="absolute w-3/4 h-3/4 bg-muted rounded-full bottom-0 start-1/2 translate-y-3.5 -translate-x-[calc(50%-3px)]"></div>
+          <Image
+            src="/profile-photo.png"
+            alt=""
+            fill
+            className="w-full h-full drop-shadow-[0_0_10px] drop-shadow-image-shadow object-cover object-top"
+          />
+        </motion.div>
+
+        <div className="mx-auto col-span-3 flex max-w-[980px] flex-col items-center gap-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +42,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <H1 className="text-balance leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <H1 className="text-balance leading-tight sm:text-5xl md:text-6xl lg:text-6xl">
               Hi, I&apos;m <span className="text-primary">Amr Naseem</span>.
               <br />
               Frontend Developer.
@@ -40,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-[700px]"
           >
-            <Lead>
+            <Lead className="text-lg">
               Specializing in React, TypeScript, and Next.js. I build
               accessible, pixel-perfect web experiences with modern
               architecture.
@@ -91,6 +106,14 @@ export function Hero() {
             >
               <Mail className="h-6 w-6" />
               <span className="sr-only">Email</span>
+            </Link>
+            <Link
+              href="https://wa.me/201207753616"
+              target="_blank"
+              className="hover:text-foreground"
+            >
+              <FaWhatsapp className="h-6 w-6" />
+              <span className="sr-only">Whatsapp</span>
             </Link>
           </motion.div>
         </div>

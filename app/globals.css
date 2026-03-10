@@ -31,6 +31,8 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
 
+  --color-image-shadow: var(--image-shadow);
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -61,6 +63,8 @@
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
+
+  --image-shadow: #acacb1;
 
   --border: #e5e7eb;
   --input: #e5e7eb;
@@ -95,6 +99,8 @@
   --destructive: #7f1d1d;
   --destructive-foreground: #fef2f2;
 
+  --image-shadow: #0d0f2b;
+  
   --border: #374151;
   --input: #374151;
   --ring: #818cf8;

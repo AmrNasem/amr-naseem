@@ -46,13 +46,13 @@ export default function AboutPage() {
                 with designers and other developers to ship production-ready
                 features.
               </P>
-              <P>
+              {/* <P>
                 My full-stack background (Node.js, PHP, MySQL) gives me a
                 broader perspective on frontend challenges, allowing me to
                 better understand API integrations and data flow.
-              </P>
+              </P> */}
 
-              <H2 className="mt-12">What I Do</H2>
+              <H2 className="mt-12 mb-4">What I Do</H2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>
                   Develop responsive, accessible user interfaces using React and

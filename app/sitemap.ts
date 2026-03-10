@@ -3,25 +3,25 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://amr-naseem.com",
+      url: process.env.NEXT_PUBLIC_APP_URL || "",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: "https://amr-naseem.com/about",
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://amr-naseem.com/projects",
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/projects`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.5,
     },
     {
-      url: "https://amr-naseem.com/contact",
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.5,

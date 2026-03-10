@@ -1,8 +1,9 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Projects } from "@/components/home/Projects";
+import ProjectCard from "@/components/projects/project-card";
 import { Container } from "@/components/ui/Container";
 import { H1, Lead } from "@/components/ui/Typography";
+import { projects } from "@/lib/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,7 +25,17 @@ export default function ProjectsPage() {
             </Lead>
           </div>
           {/* Reusing the Projects component from Home, but maybe we'd want a grid here without the "Featured" title in the future */}
-          <Projects />
+          {/* <Projects /> */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {projects
+              .map((project, index) => (
+                <ProjectCard
+                  key={project.image}
+                  index={index}
+                  project={project}
+                />
+              ))}
+          </div>
         </Container>
       </main>
       <Footer />

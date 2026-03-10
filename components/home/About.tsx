@@ -1,8 +1,6 @@
-"use client";
-
 import { Container } from "@/components/ui/Container";
 import { H2, Lead, P } from "@/components/ui/Typography";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client"
 
 export function About() {
   return (
@@ -16,24 +14,22 @@ export function About() {
           className="mx-auto max-w-3xl"
         >
           <H2 className="mb-8 text-center">About Me</H2>
-          <Lead className="mb-6 text-center">
-            I am a frontend developer based in Egypt, passionate about building
-            scalable web applications with focus on performance and user
-            experience.
+          <Lead className="mb-8 text-center">
+            I’m a frontend developer based in Egypt who enjoys turning ideas
+            into fast, clean, and engaging web experiences.
           </Lead>
           <div className="prose prose-lg dark:prose-invert mx-auto text-muted-foreground">
             <P>
-              With real production experience in both frontend and full-stack
-              development, I specialize in the Modern JavaScript Stack (React,
-              Next.js, Node.js). I have a strong foundation in strict
-              TypeScript, responsive design, and web accessibility standards.
+              I work mainly with React, Next.js, and TypeScript to build
+              responsive and scalable interfaces. I enjoy transforming UI/UX
+              designs into functional components while keeping code clean,
+              reusable, and performance-focused.
             </P>
             <P>
-              My journey includes freelancing where I delivered responsive
-              websites and reusable components, as well as academic projects
-              that simulated real-world complexities like RBAC and API
-              integrations. I value clean code, consistent design systems, and
-              shipping products that work flawlessly across all devices.
+              I care about writing maintainable code and creating reliable user
+              experiences across all devices. Always learning and improving, I’m
+              looking to grow with teams that value quality, collaboration, and
+              impactful products.
             </P>
           </div>
         </motion.div>
