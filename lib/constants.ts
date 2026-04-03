@@ -8,7 +8,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "A multilingual e-commerce product that delivers fast browsing, secure checkout, and high conversion-focused UX.",
     shortDescription:
       "A production-ready shopping experience with auth, smart filtering, cart management, and SEO-first architecture.",
-    tags: ["Next.js 16", "TypeScript", "Zustand", "Next-Intl", "Tailwind CSS", "Zod", "SEO"],
+    tags: ["E-Commerce", "Multi-Language", "Shopping", "SEO", "Next.js 16", "TypeScript"],
     links: {
       demo: "https://front-ecommerce-task.vercel.app",
       github: "https://github.com/AmrNasem/ecommerce-task",
@@ -18,16 +18,16 @@ export const projectCaseStudies: IProjectDetails[] = [
     problem:
       "Many small online stores struggle with slow pages, fragmented cart experiences, and poor localization, which causes drop-offs before checkout.",
     solution:
-      "I built a modular storefront using Next.js App Router and TypeScript, with global state for cart and filters, localized routes/content, and SEO optimization for indexable category/product pages.",
+      "I built a modular storefront using Next.js App Router and TypeScript, with localized routes/content, and SEO optimization for indexable category/product pages.",
     features: [
       "Authentication and protected user flows",
       "Cart management with persistent client state",
-      "Category and search filtering",
+      "Category filtering",
       "Multilingual UI with localized routing",
       "Form validation using Zod",
       "SEO-ready metadata and structure",
     ],
-    techs: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Next-Intl", "Zod"],
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Next-Intl", "Zod", "React Hook Form"],
     technicalDecisions: [
       {
         title: "Next.js App Router",
@@ -42,7 +42,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       {
         title: "Zod validation",
         reason:
-          "Introduced to guarantee input shape and prevent invalid checkout/profile payloads at the UI layer.",
+          "Introduced to guarantee input shape and prevent invalid payloads at the UI layer.",
       },
     ],
     challenges: [
@@ -74,110 +74,160 @@ export const projectCaseStudies: IProjectDetails[] = [
     slug: "chat-broker",
     title: "Chat Broker",
     description:
-      "A real-time messaging platform that connects users and brokers with reliable communication flows.",
+      "A smart marketplace platform where users can list products for sale, rent, or exchange, enhanced with an AI-powered broker and real-time communication.",
+
     shortDescription:
-      "Graduation project focused on real-time chat reliability, conversation management, and responsive UX.",
-    tags: ["React", "Redux Toolkit", "REST API", "Socket.io"],
+      "Graduation project combining marketplace functionality with AI-assisted product discovery and real-time chat.",
+    tags: ["Marketplace", "AI-powered", "Real-time", "React"],
+
     links: {
       demo: "https://drive.google.com/drive/folders/13t5rKCWWb5APM5JtLn1weNdKe9kyWBnt?usp=drive_link#",
       github: "https://github.com/AmrNasem/chatbroker",
     },
+
     thumbnail: "/projects/chatbroker/1.jpeg",
     featured: true,
+
     problem:
-      "Users needed quick, reliable communication with brokers, but traditional request flows were too slow and fragmented.",
+      "Users lacked a flexible platform to easily list and discover products for sale, rent, or exchange, and often struggled to find relevant items quickly or communicate efficiently with owners.",
+
     solution:
-      "The app combines REST for core resources and Socket.io for real-time events to keep chat, status, and presence synchronized with low friction.",
+      "The platform enables users to list products with multiple transaction options while integrating an AI-powered broker to recommend relevant items based on user needs, alongside real-time chat for seamless communication.",
+
     features: [
-      "Live one-to-one messaging",
-      "Conversation list with latest updates",
-      "Real-time presence and activity states",
-      "Role-based broker and client workflows",
+      "List products for sale, rent, or exchange",
+      "Advanced product management (add, update, delete)",
+      "Shopping cart and checkout system",
+      "Favorites and saved items",
+      "AI-powered chatbot for personalized product recommendations",
+      "Real-time one-to-one chat between users",
+      "User authentication and protected routes",
+      "Product owner dashboard with statistics and insights",
     ],
-    techs: ["React", "Redux Toolkit", "Socket.io", "REST API", "CSS"],
+
+    techs: [
+      "React",
+      "Redux Toolkit",
+      "Socket.io",
+      "REST API",
+      "CSS3",
+    ],
+
     technicalDecisions: [
       {
-        title: "Socket.io for events",
-        reason: "Provides robust bi-directional communication with reconnection support for unstable networks.",
+        title: "Socket.io for real-time communication",
+        reason:
+          "Enabled instant messaging between users with reliable event handling and reconnection support.",
       },
       {
-        title: "Redux Toolkit",
-        reason: "Helps maintain normalized chat state and clear async workflows in a larger app surface area.",
+        title: "AI Broker (Chatbot layer)",
+        reason:
+          "Introduced a conversational interface to help users discover relevant products based on custom needs instead of traditional filtering.",
+      },
+      {
+        title: "Redux Toolkit for state management",
+        reason:
+          "Used to manage complex global state including products, cart, chat, and user data in a scalable and predictable way.",
       },
     ],
+
     challenges: [
       {
-        challenge: "Preventing duplicate or out-of-order messages",
+        challenge: "Designing a flexible product system (sale / rent / exchange)",
         solution:
-          "Added deterministic message IDs and timestamp sorting before reducing data into state.",
+          "Created a unified product schema with multiple transaction modes and conditional logic for each workflow.",
       },
       {
-        challenge: "Handling reconnect edge cases",
+        challenge: "Matching user needs with relevant products",
         solution:
-          "Implemented reconnection listeners and state recovery to re-sync active conversations safely.",
+          "Implemented a chatbot-driven recommendation flow that interprets user input and filters products dynamically.",
+      },
+      {
+        challenge: "Handling real-time chat synchronization",
+        solution:
+          "Used Socket.io with message IDs and timestamps to ensure correct ordering and prevent duplication.",
       },
     ],
+
     screenshotsPath: "/projects/chatbroker",
     screenshots: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"],
+
     futureImprovements: [
-      "Push notifications for unread messages",
-      "Typing indicators and read receipts",
-      "Media attachments with upload progress",
+      "Smart recommendation engine with ML models",
+      "Push notifications for messages and offers",
+      "Advanced search and filtering system",
+      "Mobile application version",
     ],
   },
   {
     slug: "e-learning-platform",
     title: "E-Learning Platform",
+    
     description:
-      "An LMS application with RBAC, modular dashboards, and integrations with multiple learning APIs.",
+      "A role-based e-learning platform built to practice building scalable React applications with structured dashboards and real-world user flows.",
+  
     shortDescription:
-      "A role-aware learning platform where students and instructors get tailored dashboards and workflows.",
-    tags: ["React", "Redux Toolkit", "REST API", "Bootstrap"],
+      "Practice project focused on role-based UI, course flows, and state management in React.",
+  
+    tags: ["LMS", "Role-based", "Frontend", "Dashboard"],
+  
     links: {
       demo: "https://standalone--e-learning-client.netlify.app",
       github: "https://github.com/AmrNasem/E-Learning-Client",
     },
+  
     thumbnail: "/projects/e-learning/1.png",
-    featured: true,
+    featured: false,
+  
     problem:
-      "Course management platforms often become hard to scale when user roles and permissions are not clearly modeled.",
+      "Learning platforms require clear separation between student and instructor experiences, which can become difficult to structure and maintain in frontend applications.",
+  
     solution:
-      "I designed role-driven UI boundaries and centralized access checks, while integrating APIs for courses, assignments, and progression tracking.",
+      "Built a role-based UI system with separate workflows for instructors and students, focusing on clean state management and reusable components to simulate real-world LMS behavior.",
+  
     features: [
-      "RBAC-driven navigation and pages",
-      "Course and lesson organization",
-      "Assignment flows and progress tracking",
-      "Role-specific dashboard widgets",
+      "Instructor dashboard to create, update, and manage courses",
+      "Student experience to browse, purchase, and access courses",
+      "Course details page with structured sections and lectures",
+      "Shopping cart and purchase flow",
+      "User profile management",
     ],
+  
     techs: ["React", "Redux Toolkit", "Bootstrap", "REST API"],
+  
     technicalDecisions: [
       {
-        title: "RBAC-first architecture",
-        reason: "Reduces authorization bugs by making access rules explicit in routing and UI composition.",
+        title: "Role-based UI separation",
+        reason:
+          "Implemented conditional rendering and routing logic to simulate real-world LMS roles and workflows.",
       },
       {
-        title: "Redux Toolkit",
-        reason: "Supports consistent async data fetching and caching across multiple dashboard modules.",
+        title: "Redux Toolkit for state management",
+        reason:
+          "Used to manage course data, cart state, and user interactions across multiple pages consistently.",
       },
     ],
+  
     challenges: [
       {
-        challenge: "Managing multiple role-specific interfaces in one codebase",
+        challenge: "Handling different user flows (student vs instructor)",
         solution:
-          "Created composable layout sections and shared primitives, with role guards controlling visibility.",
+          "Separated logic using role-based conditions and reusable components to avoid duplication.",
       },
       {
-        challenge: "Coordinating API responses with different payload shapes",
+        challenge: "Structuring course content (sections & lectures)",
         solution:
-          "Standardized mapping functions before state updates to keep rendering components stable.",
+          "Designed nested data structures to represent courses in a scalable and organized way.",
       },
     ],
+  
     screenshotsPath: "/projects/e-learning",
-    screenshots: ["1.png", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg" ],
+    screenshots: ["1.png", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg"],
+  
     futureImprovements: [
-      "Interactive quiz builder",
-      "Instructor analytics and cohort insights",
-      "Offline access for lesson materials",
+      "Progress tracking and course completion",
+      "Interactive quizzes and assignments",
+      "Better API integration instead of mock data",
     ],
   },
   {
@@ -187,7 +237,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "A visually rich portfolio concept with immersive sections and performance-aware interactions.",
     shortDescription:
       "A themed single-page portfolio focused on animation timing, visual hierarchy, and interaction polish.",
-    tags: ["HTML5", "CSS3", "JavaScript"],
+    tags: ["Frontend", "Landing Page", "Vanilla JS"],
     links: {
       demo: "https://amrnasem.github.io/Gaming-App",
       github: "http://github.com/AmrNasem/gaming-app",
@@ -221,7 +271,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "A modern marketing agency website showcasing branding, creative design, and digital services.",
     shortDescription:
       "Marketing-focused agency website designed to communicate services clearly and drive inquiries.",
-    tags: ["React", "Bootstrap", "CSS Modules"],
+    tags: ["React", "Landing Page", "Marketing Agency", "Portfolio"],
     links: {
       demo: "https://valot.netlify.app",
     },
@@ -249,35 +299,59 @@ export const projectCaseStudies: IProjectDetails[] = [
   {
     slug: "special-design",
     title: "Special Design",
+  
     description:
-      "A frontend practice project focused on layout composition and foundational visual design principles.",
+      "A modern multi-section landing page built to practice responsive layouts, clean UI implementation, and smooth user experience across different screen sizes.",
+  
     shortDescription:
-      "A learning-oriented project to sharpen responsive layout, spacing, and component structuring skills.",
-    tags: ["HTML5", "CSS3", "JavaScript"],
+      "Frontend project focused on responsive design, layout structuring, and UI implementation.",
+  
+    tags: ["Landing Page", "Responsive Design", "UI/UX", "Frontend"],
+  
     links: {
       demo: "https://amrnasem.github.io/SpecialDesign",
-      github: "http://github.com/AmrNasem/SpecialDesign",
+      github: "http://github.com/AmrNasem/SpecialDesign"
     },
+  
     thumbnail: "/projects/special-design/1.jpg",
-    problem: "Early frontend practice projects often lack reusable structure and scalable styling patterns.",
+    featured: false,
+  
+    problem:
+      "Building clean, responsive landing pages with consistent spacing, alignment, and visual hierarchy can be challenging, especially when translating static designs into real code.",
+  
     solution:
-      "I used this project to practice section composition, spacing systems, and cleaner class organization.",
-    features: ["Responsive sections", "Reusable visual blocks", "Progressive enhancement basics"],
-    techs: ["HTML5", "CSS3", "JavaScript"],
+      "Implemented a structured multi-section layout with reusable styles and responsive breakpoints, focusing on maintaining visual consistency and a smooth scrolling experience across devices.",
+  
+    features: [
+      "Multi-section landing page (Hero, Services, Portfolio, Contact)",
+      "Fully responsive layout across different screen sizes",
+      "Portfolio/gallery section for showcasing work",
+      "Contact form UI",
+    ],
+  
+    techs: ["HTML", "CSS", "JavaScript"],
+  
     technicalDecisions: [
       {
-        title: "Semantic HTML first",
-        reason: "Improves accessibility and maintainability while building strong frontend fundamentals.",
+        title: "CSS layout structuring",
+        reason:
+          "Focused on building reusable layout patterns using Flexbox/Grid to maintain consistency across sections.",
       },
-    ],
-    challenges: [
       {
-        challenge: "Keeping layouts responsive across breakpoints",
-        solution: "Built mobile-first and tested each section with flexible spacing and sizing rules.",
+        title: "Responsive-first approach",
+        reason:
+          "Used media queries and fluid layouts to ensure the design adapts smoothly to all screen sizes.",
       },
-    ],
+    ],  
     screenshotsPath: "/projects/special-design",
     screenshots: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
+  
+    futureImprovements: [
+      "Add animations and micro-interactions",
+      "Improve accessibility (ARIA, keyboard navigation)",
+      "Connect contact form to a backend service",
+      "Optimize performance and assets",
+    ],
   },
 ];
 

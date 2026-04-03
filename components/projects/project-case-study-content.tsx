@@ -126,16 +126,19 @@ export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyCon
         </div>
       </Section>
 
-      <Section title="Challenges & Solutions" delay={0.16}>
-        <div className="space-y-4">
-          {project.challenges.map((item) => (
-            <div key={item.challenge} className="rounded-xl border bg-background p-4">
-              <p className="font-semibold text-foreground">{item.challenge}</p>
-              <p className="mt-2 text-sm leading-7">{item.solution}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      {
+        project.challenges &&
+        <Section title="Challenges & Solutions" delay={0.16}>
+          <div className="space-y-4">
+            {project.challenges.map((item) => (
+              <div key={item.challenge} className="rounded-xl border bg-background p-4">
+                <p className="font-semibold text-foreground">{item.challenge}</p>
+                <p className="mt-2 text-sm leading-7">{item.solution}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+      }
 
       {fullPathScreenshots && fullPathScreenshots.length > 1 && (
         <Section title="Screenshots" delay={0.18}>

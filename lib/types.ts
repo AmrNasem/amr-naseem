@@ -31,7 +31,7 @@ export interface IProjectDetails extends IProjectCard {
   solution: string;
   features: string[];
   technicalDecisions: ITechnicalDecision[];
-  challenges: IProjectChallenge[];
+  challenges?: IProjectChallenge[];
   screenshotsPath?: string;
   screenshots?: string[];
   futureImprovements?: string[];
