@@ -22,10 +22,10 @@ function ProjectCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md"
     >
-      {project.image && (
+      {project.thumbnail && (
         <div className="aspect-video relative">
           <Image
-            src={project.image}
+            src={project.thumbnail}
             alt={project.title}
             fill
             className="w-full h-full"

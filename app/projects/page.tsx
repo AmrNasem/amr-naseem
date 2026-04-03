@@ -30,7 +30,7 @@ export default function ProjectsPage() {
             {projects
               .map((project, index) => (
                 <ProjectCard
-                  key={project.image}
+                  key={project.slug}
                   index={index}
                   project={project}
                 />

@@ -24,7 +24,7 @@ export function Projects() {
               .filter((project) => project.featured)
               .map((project, index) => (
                 <ProjectCard
-                  key={project.image}
+                  key={project.slug}
                   index={index}
                   project={project}
                 />

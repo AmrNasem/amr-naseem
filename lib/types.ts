@@ -2,7 +2,7 @@ export interface IProjectCard {
   slug: string;
   title: string;
   description: string;
-  image: string;
+  thumbnail: string;
   tags: string[];
   links: IProjectLinks;
   featured?: boolean;
@@ -31,6 +31,7 @@ export interface IProjectDetails extends IProjectCard {
   techStack: string[];
   technicalDecisions: ITechnicalDecision[];
   challenges: IProjectChallenge[];
-  gallery?: string[];
+  screenshotsPath?: string;
+  screenshots?: string[];
   futureImprovements?: string[];
 }

@@ -13,7 +13,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://front-ecommerce-task.vercel.app",
       github: "https://github.com/AmrNasem/ecommerce-task",
     },
-    image: "/projects/e-commerce-task/1.png",
+    thumbnail: "/projects/e-commerce-task/1.png",
     featured: true,
     problem:
       "Many small online stores struggle with slow pages, fragmented cart experiences, and poor localization, which causes drop-offs before checkout.",
@@ -62,7 +62,8 @@ export const projectCaseStudies: IProjectDetails[] = [
           "Optimized images and component rendering paths, and structured filtering logic for predictable updates.",
       },
     ],
-    gallery: ["/projects/e-commerce-task/1.png", "/projects/e-commerce-task/2.png"],
+    screenshotsPath: "/projects/e-commerce-task",
+    screenshots: ["1.png", "2.png"],
     futureImprovements: [
       "Stripe integration for production payments",
       "Wishlist and saved carts across devices",
@@ -81,7 +82,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://drive.google.com/drive/folders/13t5rKCWWb5APM5JtLn1weNdKe9kyWBnt?usp=drive_link#",
       github: "https://github.com/AmrNasem/chatbroker",
     },
-    image: "/projects/chatbroker.jpeg",
+    thumbnail: "/projects/chatbroker/1.jpeg",
     featured: true,
     problem:
       "Users needed quick, reliable communication with brokers, but traditional request flows were too slow and fragmented.",
@@ -116,6 +117,8 @@ export const projectCaseStudies: IProjectDetails[] = [
           "Implemented reconnection listeners and state recovery to re-sync active conversations safely.",
       },
     ],
+    screenshotsPath: "/projects/chatbroker",
+    screenshots: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"],
     futureImprovements: [
       "Push notifications for unread messages",
       "Typing indicators and read receipts",
@@ -134,7 +137,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://standalone--e-learning-client.netlify.app",
       github: "https://github.com/AmrNasem/E-Learning-Client",
     },
-    image: "/projects/e-learning.png",
+    thumbnail: "/projects/e-learning/1.png",
     featured: true,
     problem:
       "Course management platforms often become hard to scale when user roles and permissions are not clearly modeled.",
@@ -169,6 +172,8 @@ export const projectCaseStudies: IProjectDetails[] = [
           "Standardized mapping functions before state updates to keep rendering components stable.",
       },
     ],
+    screenshotsPath: "/projects/e-learning",
+    screenshots: ["1.png", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg" ],
     futureImprovements: [
       "Interactive quiz builder",
       "Instructor analytics and cohort insights",
@@ -188,7 +193,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       github: "http://github.com/AmrNasem/gaming-app",
     },
     featured: true,
-    image: "/projects/gamer-portfolio.jpeg",
+    thumbnail: "/projects/gamer-portfolio/1.jpeg",
     problem: "Traditional portfolio templates can look generic and fail to communicate a strong visual identity.",
     solution:
       "I built a custom gaming-inspired UI with animation and section pacing to create a memorable user journey.",
@@ -206,6 +211,8 @@ export const projectCaseStudies: IProjectDetails[] = [
         solution: "Reduced expensive effects and optimized transition timing for better frame consistency.",
       },
     ],
+    screenshotsPath: "/projects/gamer-portfolio",
+    screenshots: ["1.jpeg", "2.jpeg"],
   },
   {
     slug: "valot",
@@ -218,7 +225,7 @@ export const projectCaseStudies: IProjectDetails[] = [
     links: {
       demo: "https://valot.netlify.app",
     },
-    image: "/projects/valot.jpeg",
+    thumbnail: "/projects/valot/1.jpeg",
     problem: "Small agencies need websites that communicate service value quickly and build trust in seconds.",
     solution:
       "I crafted conversion-oriented content sections and reusable UI blocks with strong visual hierarchy.",
@@ -236,6 +243,8 @@ export const projectCaseStudies: IProjectDetails[] = [
         solution: "Established reusable section patterns and shared spacing/typography conventions.",
       },
     ],
+    screenshotsPath: "/projects/valot",
+    screenshots: ["1.jpeg"],
   },
   {
     slug: "special-design",
@@ -249,7 +258,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://amrnasem.github.io/SpecialDesign",
       github: "http://github.com/AmrNasem/SpecialDesign",
     },
-    image: "/projects/special-design.jpg",
+    thumbnail: "/projects/special-design/1.jpg",
     problem: "Early frontend practice projects often lack reusable structure and scalable styling patterns.",
     solution:
       "I used this project to practice section composition, spacing systems, and cleaner class organization.",
@@ -267,6 +276,8 @@ export const projectCaseStudies: IProjectDetails[] = [
         solution: "Built mobile-first and tested each section with flexible spacing and sizing rules.",
       },
     ],
+    screenshotsPath: "/projects/special-design",
+    screenshots: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
   },
 ];
 
@@ -274,7 +285,7 @@ export const projects: IProjectCard[] = projectCaseStudies.map((project) => ({
   slug: project.slug,
   title: project.title,
   description: project.description,
-  image: project.image,
+  thumbnail: project.thumbnail,
   tags: project.tags,
   links: project.links,
   featured: project.featured,

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Carousel } from "@/components/ui/Carousel";
 import { IProjectDetails } from "@/lib/types";
 
 interface ProjectCaseStudyContentProps {
@@ -45,7 +46,7 @@ export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyCon
       >
         <div className="relative mb-6 aspect-16/7 overflow-hidden rounded-2xl">
           <Image
-            src={project.image}
+            src={project.thumbnail}
             alt={project.title}
             fill
             priority
@@ -137,20 +138,9 @@ export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyCon
         </div>
       </Section>
 
-      {project.gallery && project.gallery.length > 0 && (
+      {project.screenshots && project.screenshots.length > 1 && (
         <Section title="Screenshots" delay={0.18}>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {project.gallery.map((image, index) => (
-              <div key={`${image}-${index}`} className="relative aspect-video overflow-hidden rounded-xl border">
-                <Image
-                  src={image}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel imagesPath={project.screenshotsPath} images={project.screenshots} altBase={project.title} />
         </Section>
       )}
 
