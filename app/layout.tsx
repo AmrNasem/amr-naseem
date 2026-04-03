@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Amr Naseem - Frontend Developer",
   description:
-    "Senior Frontend Engineer specializing in React, TypeScript, and Next.js.",
+    "Frontend Engineer specializing in React, TypeScript, and Next.js.",
   icons: {
     icon: "/favicon.ico",
   },

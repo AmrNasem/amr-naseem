@@ -3,7 +3,7 @@ import Image from "next/image";
 import { H3, P } from "../ui/Typography";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { IProjectCard } from "@/lib/types";
 
 function ProjectCard({
@@ -48,6 +48,14 @@ function ProjectCard({
                 {tag}
               </span>
             ))}
+          </div>
+
+          <div className="mb-3">
+            <Button variant="ghost" size="sm" className="w-full" asChild>
+              <Link href={`/projects/${project.slug}`}>
+                View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
 
           <div className="flex items-center gap-4">

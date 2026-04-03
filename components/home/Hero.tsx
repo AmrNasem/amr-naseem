@@ -15,7 +15,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full aspect-square mt-8 lg:mt-0 max-w-[80%] mx-auto col-span-2 rounded-full overflow-hidden relative"
+          className="hidden md:block w-full aspect-square mt-8 lg:mt-0 max-w-[80%] mx-auto col-span-2 rounded-full overflow-hidden relative"
         >
           <div className="absolute w-3/4 h-3/4 bg-muted rounded-full bottom-0 start-1/2 translate-y-3.5 -translate-x-[calc(50%-3px)]"></div>
           <Image

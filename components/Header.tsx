@@ -64,7 +64,7 @@ export function Header() {
           <Button
             variant="outline"
             size="sm"
-            className="hidden md:flex"
+            className=""
             asChild
           >
             <a href="/Resume - Amr Naseem.pdf" download>
