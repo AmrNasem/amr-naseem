@@ -71,6 +71,91 @@ export const projectCaseStudies: IProjectDetails[] = [
     ],
   },
   {
+    slug: "personal-portfolio",
+    title: "Personal Portfolio",
+
+    description:
+      "A modern developer portfolio showcasing projects, skills, and experience with a focus on clean UI, scalability, and user experience.",
+
+    shortDescription:
+      "Portfolio website featuring project filtering, structured case studies, and responsive design.",
+
+    tags: ["Portfolio", "Frontend", "Landing Page", "Responsive Design", "Animation", "Cursor"],
+
+    links: {
+      demo: "https://amr-naseem.vercel.app",
+      github: "https://github.com/AmrNasem/amr-naseem",
+    },
+
+    thumbnail: "/projects/portfolio/1.png",
+    featured: true,
+
+    problem:
+      "Developers need a structured and professional way to present their work, but many portfolios lack clear project storytelling, filtering, and user-friendly navigation.",
+
+    solution:
+      "Built a structured portfolio with dedicated sections and pages, project case studies, and dynamic filtering to improve discoverability and user experience.",
+
+    features: [
+      "Hero section with clear personal branding",
+      "About section highlighting background and skills",
+      "Technical skills showcase",
+      "Projects section with detailed case studies",
+      "Dedicated pages (About, Projects, Contact)",
+      "Tech stack filtering for projects",
+      "Light and dark mode support",
+      "Resume download functionality",
+      "Contact section with social links",
+    ],
+
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cursor"
+    ],
+
+    technicalDecisions: [
+      {
+        title: "Component-based architecture",
+        reason:
+          "Ensures reusability and scalability across sections and pages like projects, filters, and layouts.",
+      },
+      {
+        title: "Client-side filtering for projects",
+        reason:
+          "Provides instant feedback and smooth UX without additional API calls.",
+      },
+      {
+        title: "Theme management (light/dark mode)",
+        reason:
+          "Improves accessibility and user experience across different environments.",
+      },
+    ],
+
+    challenges: [
+      {
+        challenge: "Maintaining UI consistency across multiple sections",
+        solution:
+          "Used shared components and design patterns to unify layout and spacing.",
+      },
+      {
+        challenge: "Balancing aesthetics with performance",
+        solution:
+          "Optimized styles and avoided unnecessary complexity while keeping a modern UI.",
+      },
+    ],
+
+    screenshotsPath: "/projects/portfolio",
+    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
+
+    futureImprovements: [
+      "Add animations and micro-interactions",
+      "Integrate CMS for dynamic project management",
+      "Add blog section for content sharing"
+    ],
+  },
+  {
     slug: "chat-broker",
     title: "Chat Broker",
     description:
@@ -162,29 +247,29 @@ export const projectCaseStudies: IProjectDetails[] = [
   {
     slug: "e-learning-platform",
     title: "E-Learning Platform",
-    
+
     description:
       "A role-based e-learning platform built to practice building scalable React applications with structured dashboards and real-world user flows.",
-  
+
     shortDescription:
       "Practice project focused on role-based UI, course flows, and state management in React.",
-  
+
     tags: ["LMS", "Role-based", "Frontend", "Dashboard"],
-  
+
     links: {
       demo: "https://standalone--e-learning-client.netlify.app",
       github: "https://github.com/AmrNasem/E-Learning-Client",
     },
-  
+
     thumbnail: "/projects/e-learning/1.png",
     featured: false,
-  
+
     problem:
       "Learning platforms require clear separation between student and instructor experiences, which can become difficult to structure and maintain in frontend applications.",
-  
+
     solution:
       "Built a role-based UI system with separate workflows for instructors and students, focusing on clean state management and reusable components to simulate real-world LMS behavior.",
-  
+
     features: [
       "Instructor dashboard to create, update, and manage courses",
       "Student experience to browse, purchase, and access courses",
@@ -192,9 +277,9 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Shopping cart and purchase flow",
       "User profile management",
     ],
-  
+
     techs: ["React", "Redux Toolkit", "Bootstrap", "REST API"],
-  
+
     technicalDecisions: [
       {
         title: "Role-based UI separation",
@@ -207,7 +292,7 @@ export const projectCaseStudies: IProjectDetails[] = [
           "Used to manage course data, cart state, and user interactions across multiple pages consistently.",
       },
     ],
-  
+
     challenges: [
       {
         challenge: "Handling different user flows (student vs instructor)",
@@ -220,10 +305,10 @@ export const projectCaseStudies: IProjectDetails[] = [
           "Designed nested data structures to represent courses in a scalable and organized way.",
       },
     ],
-  
+
     screenshotsPath: "/projects/e-learning",
     screenshots: ["1.png", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg"],
-  
+
     futureImprovements: [
       "Progress tracking and course completion",
       "Interactive quizzes and assignments",
@@ -299,38 +384,38 @@ export const projectCaseStudies: IProjectDetails[] = [
   {
     slug: "special-design",
     title: "Special Design",
-  
+
     description:
       "A modern multi-section landing page built to practice responsive layouts, clean UI implementation, and smooth user experience across different screen sizes.",
-  
+
     shortDescription:
       "Frontend project focused on responsive design, layout structuring, and UI implementation.",
-  
+
     tags: ["Landing Page", "Responsive Design", "UI/UX", "Frontend"],
-  
+
     links: {
       demo: "https://amrnasem.github.io/SpecialDesign",
       github: "http://github.com/AmrNasem/SpecialDesign"
     },
-  
+
     thumbnail: "/projects/special-design/1.jpg",
     featured: false,
-  
+
     problem:
       "Building clean, responsive landing pages with consistent spacing, alignment, and visual hierarchy can be challenging, especially when translating static designs into real code.",
-  
+
     solution:
       "Implemented a structured multi-section layout with reusable styles and responsive breakpoints, focusing on maintaining visual consistency and a smooth scrolling experience across devices.",
-  
+
     features: [
       "Multi-section landing page (Hero, Services, Portfolio, Contact)",
       "Fully responsive layout across different screen sizes",
       "Portfolio/gallery section for showcasing work",
       "Contact form UI",
     ],
-  
+
     techs: ["HTML", "CSS", "JavaScript"],
-  
+
     technicalDecisions: [
       {
         title: "CSS layout structuring",
@@ -342,10 +427,10 @@ export const projectCaseStudies: IProjectDetails[] = [
         reason:
           "Used media queries and fluid layouts to ensure the design adapts smoothly to all screen sizes.",
       },
-    ],  
+    ],
     screenshotsPath: "/projects/special-design",
     screenshots: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
-  
+
     futureImprovements: [
       "Add animations and micro-interactions",
       "Improve accessibility (ARIA, keyboard navigation)",
