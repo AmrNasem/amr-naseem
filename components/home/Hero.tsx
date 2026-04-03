@@ -10,19 +10,18 @@ import { FaWhatsapp } from "react-icons/fa";
 export function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center py-12 md:py-24 lg:py-32">
-      <Container className="flex flex-col-reverse lg:grid grid-cols-5 gap-4 lg:mt-0">
+      <Container className="items-center flex flex-col-reverse lg:grid grid-cols-5 gap-4 lg:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="hidden md:block w-full aspect-square mt-8 lg:mt-0 max-w-[80%] mx-auto col-span-2 rounded-full overflow-hidden relative"
+          className="md:block bg-muted/60 w-[60%] lg:w-[80%] border-2 border-ring aspect-square mt-8 lg:mt-0 mx-auto col-span-2 rounded-full overflow-hidden relative p-2"
         >
-          <div className="absolute w-3/4 h-3/4 bg-muted rounded-full bottom-0 start-1/2 translate-y-3.5 -translate-x-[calc(50%-3px)]"></div>
           <Image
             src="/profile-photo.png"
             alt=""
             fill
-            className="w-full h-full drop-shadow-[0_0_10px] drop-shadow-image-shadow object-cover object-top"
+            className="w-full h-full drop-shadow-[0_0_10px] translate-x-1 drop-shadow-image-shadow object-cover object-top block"
           />
         </motion.div>
 

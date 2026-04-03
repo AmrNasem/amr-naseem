@@ -43,8 +43,8 @@ export function TechFilter({
       <div
         className={cn(
           "relative -mx-4 px-4 sm:mx-0 sm:px-0",
-          "before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-6 before:bg-gradient-to-r before:from-background before:to-transparent sm:before:hidden",
-          "after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-6 after:bg-gradient-to-l after:from-background after:to-transparent sm:after:hidden",
+          "before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-6 before:bg-linear-to-r before:from-background before:to-transparent sm:before:hidden",
+          "after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-6 after:bg-linear-to-l after:from-background after:to-transparent sm:after:hidden",
         )}
       >
         <div

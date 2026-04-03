@@ -20,7 +20,7 @@ export function Carousel({ images, altBase = "Screenshot", className }: Carousel
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const len = images.length;
   const safeIndex = len > 0 ? Math.min(index, len - 1) : 0;
@@ -41,10 +41,10 @@ export function Carousel({ images, altBase = "Screenshot", className }: Carousel
     if (i >= 0 && i < len) setIndex(i);
   }, [len]);
 
-  useEffect(() => {
-    const el = thumbRefs.current[safeIndex];
-    el?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-  }, [safeIndex]);
+  // useEffect(() => {
+  //   const el = thumbRefs.current[safeIndex];
+  //   el?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  // }, [safeIndex]);
 
   const onKeyDownRoot = (e: React.KeyboardEvent) => {
     if (!multi) return;
@@ -185,9 +185,9 @@ export function Carousel({ images, altBase = "Screenshot", className }: Carousel
               return (
                 <button
                   key={`${src}-${i}`}
-                  ref={(el) => {
-                    thumbRefs.current[i] = el;
-                  }}
+                  // ref={(el) => {
+                  //   thumbRefs.current[i] = el;
+                  // }}
                   type="button"
                   role="tab"
                   aria-selected={active}
