@@ -67,7 +67,7 @@ export function Header() {
             className=""
             asChild
           >
-            <a href="/Resume - Amr Naseem.pdf" download>
+            <a href="https://drive.google.com/uc?export=download&id=1RuOndUOpaRfGDW9FCigj51jemc0kjKlk" download>
               Resume
             </a>
           </Button>
