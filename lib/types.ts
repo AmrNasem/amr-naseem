@@ -4,6 +4,8 @@ export interface IProjectCard {
   description: string;
   thumbnail: string;
   tags: string[];
+  /** Normalized stack labels used for filtering (not necessarily identical to display tags). */
+  techs: string[];
   links: IProjectLinks;
   featured?: boolean;
 }
@@ -28,7 +30,6 @@ export interface IProjectDetails extends IProjectCard {
   problem: string;
   solution: string;
   features: string[];
-  techStack: string[];
   technicalDecisions: ITechnicalDecision[];
   challenges: IProjectChallenge[];
   screenshotsPath?: string;

@@ -1,10 +1,11 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import ProjectCard from "@/components/projects/project-card";
+import { ProjectsGallery } from "@/components/projects/projects-gallery";
 import { Container } from "@/components/ui/Container";
 import { H1, Lead } from "@/components/ui/Typography";
 import { projects } from "@/lib/constants";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Projects - Amr Naseem",
@@ -24,18 +25,20 @@ export default function ProjectsPage() {
               with React, Next.js, and modern web technologies.
             </Lead>
           </div>
-          {/* Reusing the Projects component from Home, but maybe we'd want a grid here without the "Featured" title in the future */}
-          {/* <Projects /> */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects
-              .map((project, index) => (
-                <ProjectCard
-                  key={project.slug}
-                  index={index}
-                  project={project}
-                />
-              ))}
-          </div>
+          <Suspense
+            fallback={
+              <div className="grid min-h-96 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {projects.map((project) => (
+                  <div
+                    key={project.slug}
+                    className="h-64 animate-pulse rounded-lg border bg-muted/40"
+                  />
+                ))}
+              </div>
+            }
+          >
+            <ProjectsGallery projects={projects} />
+          </Suspense>
         </Container>
       </main>
       <Footer />

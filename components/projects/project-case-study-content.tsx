@@ -1,5 +1,3 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,6 +34,7 @@ function Section({
 }
 
 export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyContentProps) {
+  const fullPathScreenshots = project.screenshots?.map(sc => `${project.screenshotsPath}/${sc}`)
   return (
     <div className="space-y-10 md:space-y-12">
       <motion.section
@@ -105,7 +104,7 @@ export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyCon
 
       <Section title="Tech Stack" delay={0.12}>
         <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech) => (
+          {project.techs.map((tech) => (
             <span
               key={tech}
               className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
@@ -138,9 +137,9 @@ export default function ProjectCaseStudyContent({ project }: ProjectCaseStudyCon
         </div>
       </Section>
 
-      {project.screenshots && project.screenshots.length > 1 && (
+      {fullPathScreenshots && fullPathScreenshots.length > 1 && (
         <Section title="Screenshots" delay={0.18}>
-          <Carousel imagesPath={project.screenshotsPath} images={project.screenshots} altBase={project.title} />
+          <Carousel images={fullPathScreenshots} altBase={project.title} />
         </Section>
       )}
 

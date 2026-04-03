@@ -5,12 +5,15 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { IProjectCard } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 function ProjectCard({
   project,
+  className = "",
   index = 0,
 }: {
   project: IProjectCard;
+  className?: string;
   index: number;
 }) {
   return (
@@ -20,7 +23,7 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md"
+      className={cn("group flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md", className)}
     >
       {project.thumbnail && (
         <div className="aspect-video relative">

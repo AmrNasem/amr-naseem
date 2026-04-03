@@ -27,7 +27,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Form validation using Zod",
       "SEO-ready metadata and structure",
     ],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Next-Intl", "Zod"],
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Next-Intl", "Zod"],
     technicalDecisions: [
       {
         title: "Next.js App Router",
@@ -63,7 +63,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       },
     ],
     screenshotsPath: "/projects/e-commerce-task",
-    screenshots: ["1.png", "2.png"],
+    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"],
     futureImprovements: [
       "Stripe integration for production payments",
       "Wishlist and saved carts across devices",
@@ -94,7 +94,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Real-time presence and activity states",
       "Role-based broker and client workflows",
     ],
-    techStack: ["React", "Redux Toolkit", "Socket.io", "REST API", "CSS"],
+    techs: ["React", "Redux Toolkit", "Socket.io", "REST API", "CSS"],
     technicalDecisions: [
       {
         title: "Socket.io for events",
@@ -149,7 +149,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Assignment flows and progress tracking",
       "Role-specific dashboard widgets",
     ],
-    techStack: ["React", "Redux Toolkit", "Bootstrap", "REST API"],
+    techs: ["React", "Redux Toolkit", "Bootstrap", "REST API"],
     technicalDecisions: [
       {
         title: "RBAC-first architecture",
@@ -192,13 +192,13 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://amrnasem.github.io/Gaming-App",
       github: "http://github.com/AmrNasem/gaming-app",
     },
-    featured: true,
+    featured: false,
     thumbnail: "/projects/gamer-portfolio/1.jpeg",
     problem: "Traditional portfolio templates can look generic and fail to communicate a strong visual identity.",
     solution:
       "I built a custom gaming-inspired UI with animation and section pacing to create a memorable user journey.",
     features: ["Animated hero sections", "Smooth in-page navigation", "High-contrast visual design"],
-    techStack: ["HTML5", "CSS3", "JavaScript"],
+    techs: ["HTML5", "CSS3", "JavaScript"],
     technicalDecisions: [
       {
         title: "Vanilla JavaScript",
@@ -230,7 +230,7 @@ export const projectCaseStudies: IProjectDetails[] = [
     solution:
       "I crafted conversion-oriented content sections and reusable UI blocks with strong visual hierarchy.",
     features: ["Service highlights", "Case snippets", "CTA-focused layouts"],
-    techStack: ["React", "Bootstrap", "CSS Modules"],
+    techs: ["React", "Bootstrap", "CSS Modules"],
     technicalDecisions: [
       {
         title: "CSS Modules",
@@ -263,7 +263,7 @@ export const projectCaseStudies: IProjectDetails[] = [
     solution:
       "I used this project to practice section composition, spacing systems, and cleaner class organization.",
     features: ["Responsive sections", "Reusable visual blocks", "Progressive enhancement basics"],
-    techStack: ["HTML5", "CSS3", "JavaScript"],
+    techs: ["HTML5", "CSS3", "JavaScript"],
     technicalDecisions: [
       {
         title: "Semantic HTML first",
@@ -287,6 +287,7 @@ export const projects: IProjectCard[] = projectCaseStudies.map((project) => ({
   description: project.description,
   thumbnail: project.thumbnail,
   tags: project.tags,
+  techs: project.techs,
   links: project.links,
   featured: project.featured,
 }));

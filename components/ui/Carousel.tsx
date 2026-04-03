@@ -9,14 +9,13 @@ import { cn } from "@/lib/utils";
 const SWIPE_THRESHOLD_PX = 48;
 
 export interface CarouselProps {
-  imagesPath?: string;
   images: string[];
   /** Used for alt text, e.g. project title */
   altBase?: string;
   className?: string;
 }
 
-export function Carousel({ imagesPath, images, altBase = "Screenshot", className }: CarouselProps) {
+export function Carousel({ images, altBase = "Screenshot", className }: CarouselProps) {
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const touchStartX = useRef<number | null>(null);
@@ -25,7 +24,7 @@ export function Carousel({ imagesPath, images, altBase = "Screenshot", className
 
   const len = images.length;
   const safeIndex = len > 0 ? Math.min(index, len - 1) : 0;
-  const currentSrc = len > 0 ? `${imagesPath}/${images[safeIndex]}`: "";
+  const currentSrc = len > 0 ? images[safeIndex]: "";
   const multi = len > 1;
 
   const goNext = useCallback(() => {
@@ -183,10 +182,9 @@ export function Carousel({ imagesPath, images, altBase = "Screenshot", className
           >
             {images.map((src, i) => {
               const active = i === safeIndex;
-              const fullSrc = `${imagesPath}/${src}`
               return (
                 <button
-                  key={`${fullSrc}-${i}`}
+                  key={`${src}-${i}`}
                   ref={(el) => {
                     thumbRefs.current[i] = el;
                   }}
@@ -203,7 +201,7 @@ export function Carousel({ imagesPath, images, altBase = "Screenshot", className
                   )}
                 >
                   <Image
-                    src={fullSrc}
+                    src={src}
                     alt=""
                     fill
                     sizes="112px"
