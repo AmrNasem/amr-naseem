@@ -4,12 +4,45 @@ import { ProjectsGallery } from "@/components/projects/projects-gallery";
 import { Container } from "@/components/ui/Container";
 import { H1, Lead } from "@/components/ui/Typography";
 import { projects } from "@/lib/constants";
-import { Metadata } from "next";
+import { absoluteUrl, defaultKeywords, getSiteUrl } from "@/lib/site";
+import type { Metadata } from "next";
 import { Suspense } from "react";
 
+const pageKeywords = [
+  ...defaultKeywords,
+  "Projects",
+  "Case Studies",
+  "E-Commerce",
+  "Web Apps",
+  "Portfolio Projects",
+];
+
 export const metadata: Metadata = {
-  title: "Projects - Amr Naseem",
-  description: "Showcase of my frontend and full-stack development projects.",
+  title: "Projects",
+  description:
+    "Selected projects and case studies — e-commerce, portfolios, and production web apps built with React, Next.js, and TypeScript.",
+  keywords: pageKeywords,
+  openGraph: {
+    title: "Projects | Amr Naseem",
+    description:
+      "Case studies and shipped work — modern frontend architecture, UX, and technical write-ups.",
+    url: `${getSiteUrl()}/projects`,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Amr Naseem — Frontend Developer portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Amr Naseem",
+    description:
+      "Case studies and shipped work — modern frontend architecture, UX, and technical write-ups.",
+    images: [absoluteUrl("/opengraph-image")],
+  },
 };
 
 export default function ProjectsPage() {

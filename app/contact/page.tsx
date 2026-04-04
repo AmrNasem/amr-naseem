@@ -4,13 +4,44 @@ import { Container } from "@/components/ui/Container";
 import { H1, Lead, P } from "@/components/ui/Typography";
 import { Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import { Metadata } from "next";
+import { absoluteUrl, defaultKeywords, getSiteUrl } from "@/lib/site";
+import type { Metadata } from "next";
 import { FaWhatsapp } from "react-icons/fa";
 
+const pageKeywords = [
+  ...defaultKeywords,
+  "Contact",
+  "Hire",
+  "Freelance",
+  "LinkedIn",
+];
+
 export const metadata: Metadata = {
-  title: "Contact - Amr Naseem",
+  title: "Contact",
   description:
-    "Get in touch with Amr Naseem for freelance projects or opportunities.",
+    "Contact Amr Naseem for freelance work, collaborations, or full-time opportunities — email, LinkedIn, and WhatsApp.",
+  keywords: pageKeywords,
+  openGraph: {
+    title: "Contact | Amr Naseem",
+    description:
+      "Reach out for projects or opportunities via email, LinkedIn, or WhatsApp.",
+    url: `${getSiteUrl()}/contact`,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Amr Naseem — Frontend Developer portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Amr Naseem",
+    description:
+      "Reach out for projects or opportunities via email, LinkedIn, or WhatsApp.",
+    images: [absoluteUrl("/opengraph-image")],
+  },
 };
 
 export default function ContactPage() {

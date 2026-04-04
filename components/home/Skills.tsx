@@ -1,44 +1,10 @@
+"use client";
+
+import { SkillCard } from "@/components/home/SkillCard";
 import { Container } from "@/components/ui/Container";
 import { H2, H3 } from "@/components/ui/Typography";
-import * as motion from "motion/react-client"
-
-const skillCategories = [
-  {
-    title: "Core",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Redux Toolkit",
-      "Zustand",
-      "Context API",
-    ],
-  },
-  {
-    title: "Styling & UI",
-    skills: [
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Framer Motion",
-      "Responsive Design",
-    ],
-  },
-  {
-    title: "Tools",
-    skills: ["Git", "GitHub", "VS Code", "Cursor", "Vercel", "Postman", "Vite"],
-  },
-
-  {
-    title: "Backend",
-    skills: ["Node.js", "Mongoose", "Express", "REST API"],
-  },
-  // {
-  //   title: "Core",
-  //   skills: ["Data Structures", "Algorithms", "OOP", "System Design"],
-  // },
-];
+import { skillCategories } from "@/lib/skills-data";
+import * as motion from "motion/react-client";
 
 export function Skills() {
   return (
@@ -52,25 +18,24 @@ export function Skills() {
         >
           <H2 className="mb-12 text-center">Technical Skills</H2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-lg border bg-card p-6 shadow-sm"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-2xl border border-border/80 bg-card/50 p-6 shadow-sm backdrop-blur-sm"
               >
-                <H3 className="mb-4 text-center text-lg">{category.title}</H3>
-                <ul className="flex flex-wrap justify-center gap-2">
+                <H3 className="mb-5 text-center text-lg">{category.title}</H3>
+                <ul className="flex flex-wrap justify-center gap-2.5">
                   {category.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className="rounded-md bg-secondary px-2.5 py-1 text-sm font-medium text-secondary-foreground"
-                    >
-                      {skill}
-                    </li>
+                    <SkillCard
+                      key={skill.name}
+                      name={skill.name}
+                      icon={skill.icon}
+                    />
                   ))}
                 </ul>
               </motion.div>

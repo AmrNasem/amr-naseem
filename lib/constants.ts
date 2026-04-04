@@ -414,7 +414,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Contact form UI",
     ],
 
-    techs: ["HTML", "CSS", "JavaScript"],
+    techs: ["HTML", "CSS3", "JavaScript"],
 
     technicalDecisions: [
       {

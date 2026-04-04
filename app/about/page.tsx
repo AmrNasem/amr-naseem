@@ -2,12 +2,43 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { H1, H2, Lead, P } from "@/components/ui/Typography";
-import { Metadata } from "next";
+import { absoluteUrl, defaultKeywords, getSiteUrl } from "@/lib/site";
+import type { Metadata } from "next";
+
+const pageKeywords = [
+  ...defaultKeywords,
+  "About",
+  "Experience",
+  "React Developer",
+  "Freelance",
+];
 
 export const metadata: Metadata = {
-  title: "About - Amr Naseem",
+  title: "About",
   description:
-    "Learn more about Amr Naseem's background, experience, and skills.",
+    "Learn about Amr Naseem — background, experience, and how I build responsive, accessible interfaces with React and Next.js.",
+  keywords: pageKeywords,
+  openGraph: {
+    title: "About | Amr Naseem",
+    description:
+      "Background, experience, and focus areas — React, Next.js, TypeScript, and performance-minded frontend work.",
+    url: `${getSiteUrl()}/about`,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Amr Naseem — Frontend Developer portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Amr Naseem",
+    description:
+      "Background, experience, and focus areas — React, Next.js, TypeScript, and performance-minded frontend work.",
+    images: [absoluteUrl("/opengraph-image")],
+  },
 };
 
 export default function AboutPage() {

@@ -3,7 +3,8 @@ import { Header } from "@/components/Header";
 import ProjectCaseStudyContent from "@/components/projects/project-case-study-content";
 import { Container } from "@/components/ui/Container";
 import { projectCaseStudies } from "@/lib/constants";
-import { Metadata } from "next";
+import { absoluteUrl, defaultKeywords, getSiteUrl } from "@/lib/site";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type ProjectPageProps = {
@@ -24,14 +25,44 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Project Not Found - Amr Naseem",
+      title: "Project not found",
       description: "The requested project case study does not exist.",
     };
   }
 
+  const title = `${project.title} — Case Study`;
+  const keywords = [
+    ...defaultKeywords,
+    ...project.tags,
+    ...project.techs,
+    "Case Study",
+  ];
+  const ogImage = absoluteUrl(project.thumbnail);
+
   return {
-    title: `${project.title} - Case Study | Amr Naseem`,
-    description: project.description,
+    title,
+    description: project.shortDescription || project.description,
+    keywords,
+    openGraph: {
+      title: `${project.title} | Amr Naseem`,
+      description: project.shortDescription || project.description,
+      url: `${getSiteUrl()}/projects/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Amr Naseem`,
+      description: project.shortDescription || project.description,
+      images: [ogImage],
+    },
   };
 }
 

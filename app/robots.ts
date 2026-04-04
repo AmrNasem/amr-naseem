@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
+  const base = getSiteUrl();
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_APP_URL}/sitemap.xml`, // Assuming a domain or placeholder
+    sitemap: `${base}/sitemap.xml`,
   };
 }
