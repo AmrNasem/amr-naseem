@@ -7,6 +7,50 @@ import Link from "next/link";
 import { absoluteUrl, defaultKeywords, getSiteUrl } from "@/lib/site";
 import type { Metadata } from "next";
 import { FaWhatsapp } from "react-icons/fa";
+import ContactCard from "@/components/about/contact-card";
+
+
+const contacts = [
+  {
+    icon: <Mail className="mb-4 h-8 w-8 text-primary" />,
+    title: "Email",
+    description: "Drop me an email and I'll get back to you within 24 hours.",
+    link: {
+      url: "mailto:amr.nasem51@gmail.com",
+      label: "amr.nasem51@gmail.com"
+    },
+    copy: {
+      url: "amr.nasem51@gmail.com",
+      label: "Copy Email"
+    }
+  },
+  {
+    icon: <Linkedin className="mb-4 h-8 w-8 text-primary" />,
+    title: "LinkedIn",
+    description: "Let's connect professionally and grow our networks.",
+    link: {
+      url: "https://www.linkedin.com/in/amr-naseem",
+      label: "Connect on LinkedIn"
+    },
+    copy: {
+      url: "https://www.linkedin.com/in/amr-naseem",
+      label: "Copy LinkedIn"
+    }
+  },
+  {
+    icon: <FaWhatsapp className="mb-4 h-8 w-8 text-primary" />,
+    title: "Whatsapp",
+    description: "Or message me on WhatsApp and I'll respond as soon as I'm available.",
+    link: {
+      url: "https://wa.me/201207753616",
+      label: "Start a WhatsApp Chat"
+    },
+    copy: {
+      url: "+201207753616",
+      label: "Copy Number"
+    }
+  },
+]
 
 const pageKeywords = [
   ...defaultKeywords,
@@ -57,7 +101,10 @@ export default function ContactPage() {
           </Lead>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg border bg-card p-8 text-left shadow-sm">
+            {
+              contacts.map(contact => <ContactCard key={contact.link.url} contact={contact} />)
+            }
+            {/* <div className="rounded-lg border bg-card p-8 text-left shadow-sm">
               <Mail className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-lg font-semibold">Email</h3>
               <P className="mb-4 text-sm text-muted-foreground">
@@ -71,7 +118,11 @@ export default function ContactPage() {
               </Link>
             </div>
 
-            <div className="rounded-lg border bg-card p-8 text-left shadow-sm">
+            <div className="relative rounded-lg border bg-card p-8 text-left shadow-sm">
+              <CopyLinkButton
+                className="absolute top-3 end-3"
+                url="https://www.linkedin.com/in/amr-naseem"
+              />
               <Linkedin className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-lg font-semibold">LinkedIn</h3>
               <P className="mb-4 text-sm text-muted-foreground">
@@ -99,7 +150,7 @@ export default function ContactPage() {
               >
                 Start a WhatsApp Chat
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div className="mt-12">

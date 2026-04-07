@@ -46,7 +46,6 @@ export function Footer() {
             </Link>
           ))}
         </div>
-
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()}{" "}
           <span className="text-primary font-semibold">Amr Naseem</span>. All

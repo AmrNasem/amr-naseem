@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { H2, Lead } from "@/components/ui/Typography";
 import * as motion from "motion/react-client"
-import { Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 
 export function Contact() {
@@ -28,6 +28,13 @@ export function Contact() {
               <Mail className="mr-2 h-5 w-5" /> Say Hello
             </Link>
           </Button>
+          <div className="mt-12 text-center">
+            <Button variant="ghost" size="lg" asChild>
+              <Link href="/contact">
+                More Contacts <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </Container>
     </section>
