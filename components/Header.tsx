@@ -70,7 +70,7 @@ export function Header() {
             asChild
           >
             <a href="https://drive.google.com/uc?export=download&id=1RuOndUOpaRfGDW9FCigj51jemc0kjKlk" download>
-              Resume
+              Download CV
             </a>
           </Button>
           <MobileNav
