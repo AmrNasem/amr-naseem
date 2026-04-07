@@ -104,53 +104,6 @@ export default function ContactPage() {
             {
               contacts.map(contact => <ContactCard key={contact.link.url} contact={contact} />)
             }
-            {/* <div className="rounded-lg border bg-card p-8 text-left shadow-sm">
-              <Mail className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Email</h3>
-              <P className="mb-4 text-sm text-muted-foreground">
-                Drop me an email and I&apos;ll get back to you within 24 hours.
-              </P>
-              <Link
-                href="mailto:amr.nasem51@gmail.com"
-                className="font-medium text-primary hover:underline hover:text-primary/80"
-              >
-                amr.nasem51@gmail.com
-              </Link>
-            </div>
-
-            <div className="relative rounded-lg border bg-card p-8 text-left shadow-sm">
-              <CopyLinkButton
-                className="absolute top-3 end-3"
-                url="https://www.linkedin.com/in/amr-naseem"
-              />
-              <Linkedin className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">LinkedIn</h3>
-              <P className="mb-4 text-sm text-muted-foreground">
-                Let&apos;s connect professionally and grow our networks.
-              </P>
-              <Link
-                href="https://www.linkedin.com/in/amr-naseem"
-                target="_blank"
-                className="font-medium text-primary hover:underline hover:text-primary/80"
-              >
-                Connect on LinkedIn
-              </Link>
-            </div>
-            <div className="rounded-lg border bg-card p-8 text-left shadow-sm">
-              <FaWhatsapp className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Whatsapp</h3>
-              <P className="mb-4 text-sm text-muted-foreground">
-                Or message me on WhatsApp and I&apos;ll respond
-                as soon as I&apos;m available.
-              </P>
-              <Link
-                href="https://wa.me/201207753616"
-                target="_blank"
-                className="font-medium text-primary hover:underline hover:text-primary/80"
-              >
-                Start a WhatsApp Chat
-              </Link>
-            </div> */}
           </div>
 
           <div className="mt-12">

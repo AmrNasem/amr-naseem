@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/Button";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { MobileNav } from "@/components/ui/MobileNav";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -19,6 +20,7 @@ const navigation = [
 export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,14 +66,20 @@ export function Header() {
           <Button
             variant="outline"
             size="sm"
-            className=""
+            // className="hidden sm:inline-flex"
             asChild
           >
             <a href="https://drive.google.com/uc?export=download&id=1RuOndUOpaRfGDW9FCigj51jemc0kjKlk" download>
               Resume
             </a>
           </Button>
-          {/* Mobile Menu Button could go here */}
+          <MobileNav
+            isOpen={isMobileMenuOpen}
+            pathname={pathname}
+            navItems={navigation}
+            onToggle={() => setIsMobileMenuOpen((prev) => !prev)}
+            onClose={() => setIsMobileMenuOpen(false)}
+          />
         </div>
       </Container>
     </header>
