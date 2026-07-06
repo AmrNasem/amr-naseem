@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Code2, LayoutGrid, Network } from "lucide-react";
+import { LayoutGrid, Network } from "lucide-react";
 import { LuBoxes } from "react-icons/lu";
 import {
   SiBootstrap,
@@ -21,6 +21,7 @@ import {
   SiVite,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import CursorAI from "@/components/ui/icons/cursor-ai";
 
 export type SkillCategory = {
   title: string;
@@ -56,7 +57,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Git", icon: <SiGit /> },
       { name: "GitHub", icon: <SiGithub /> },
       { name: "VS Code", icon: <VscVscode /> },
-      { name: "Cursor", icon: <Code2 /> },
+      { name: "Cursor", icon: <CursorAI className={`fill-primary`} /> },
       { name: "Vercel", icon: <SiVercel /> },
       { name: "Postman", icon: <SiPostman /> },
       { name: "Vite", icon: <SiVite /> },

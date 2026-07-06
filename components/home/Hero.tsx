@@ -1,4 +1,4 @@
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { H1, Lead } from "@/components/ui/Typography";
@@ -19,8 +19,10 @@ export function Hero() {
         >
           <Image
             src="/profile-photo.png"
-            alt=""
+            alt="Amr Naseem's Photo"
             fill
+            sizes="(max-width: 1200px) 60vw, 400px"
+            priority
             className="w-full h-full drop-shadow-[0_0_10px] translate-x-1 drop-shadow-image-shadow object-cover object-top block"
           />
         </motion.div>

@@ -2,72 +2,126 @@ import { IProjectCard, IProjectDetails } from "./types";
 
 export const projectCaseStudies: IProjectDetails[] = [
   {
-    slug: "e-commerce-store",
-    title: "E-commerce Store",
+    slug: "cartly",
+    title: "Cartly",
     description:
-      "A multilingual e-commerce product that delivers fast browsing, secure checkout, and high conversion-focused UX.",
+      "A production-ready full-stack e-commerce platform built with Next.js, Better Auth, MongoDB, and Stripe.",
     shortDescription:
-      "A production-ready shopping experience with auth, smart filtering, cart management, and SEO-first architecture.",
-    tags: ["E-Commerce", "Multi-Language", "Shopping", "SEO", "Next.js 16", "TypeScript"],
-    links: {
-      demo: "https://front-ecommerce-task.vercel.app",
-      github: "https://github.com/AmrNasem/ecommerce-task",
-    },
-    thumbnail: "/projects/e-commerce-task/1.png",
-    featured: true,
-    problem:
-      "Many small online stores struggle with slow pages, fragmented cart experiences, and poor localization, which causes drop-offs before checkout.",
-    solution:
-      "I built a modular storefront using Next.js App Router and TypeScript, with localized routes/content, and SEO optimization for indexable category/product pages.",
-    features: [
-      "Authentication and protected user flows",
-      "Cart management with persistent client state",
-      "Category filtering",
-      "Multilingual UI with localized routing",
-      "Form validation using Zod",
-      "SEO-ready metadata and structure",
+      "A modern e-commerce platform featuring secure authentication, Stripe payments, admin management, coupons, order processing, and a scalable full-stack architecture.",
+    tags: [
+      "E-Commerce",
+      "Next.js 16",
+      "TypeScript",
+      "MongoDB",
+      "Better Auth",
+      "Stripe",
+      "Tailwind CSS",
     ],
-    techs: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Next-Intl", "Zod", "React Hook Form"],
+    links: {
+      demo: "https://cartly-eg.vercel.app",
+      github: "https://github.com/AmrNasem/cartly",
+    },
+    thumbnail: "/projects/cartly/1.png",
+    featured: true,
+
+    problem:
+      "Many small and medium-sized businesses need an affordable e-commerce solution that combines excellent user experience with secure authentication, reliable payment processing, and an intuitive administration dashboard. Existing solutions are often expensive, difficult to customize, or overloaded with unnecessary complexity.",
+
+    solution:
+      "Cartly was built as a production-ready e-commerce platform using the Next.js App Router. It combines Server Components, Server Actions, Better Auth, MongoDB, and Stripe to provide a fast, secure, and maintainable shopping experience while offering administrators complete control over products, categories, orders, coupons, and inventory.",
+
+    features: [
+      "Email/Password authentication",
+      "Google OAuth authentication",
+      "Role-based authorization (User, Admin, Super Admin)",
+      "Product search",
+      "Shopping cart management",
+      "Coupon and discount system",
+      "Stripe Checkout integration",
+      "Order history",
+      "Product reviews and ratings",
+      "Product management",
+      "Coupon management",
+      "Order management",
+      "Database seeding with realistic demo data",
+    ],
+
+    techs: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "Mongoose",
+      "Better Auth",
+      "Stripe",
+      "Zustand",
+    ],
+
     technicalDecisions: [
       {
-        title: "Next.js App Router",
+        title: "Next.js App Router & Server Components",
         reason:
-          "Chosen for fast route-based rendering, better SEO defaults, and scalable folder-based architecture.",
+          "Used the App Router to leverage Server Components for efficient rendering and Server Actions for secure server-side mutations, reducing unnecessary client-side JavaScript while keeping the architecture scalable.",
       },
       {
-        title: "Zustand for state",
+        title: "Better Auth for Authentication",
         reason:
-          "Used for a lightweight, predictable global cart/filter state without boilerplate-heavy setup.",
+          "Selected Better Auth to implement secure session management, Google OAuth, email/password authentication, and role-based authorization while keeping authentication logic centralized and type-safe.",
       },
       {
-        title: "Zod validation",
+        title: "Stripe Checkout with Webhooks",
         reason:
-          "Introduced to guarantee input shape and prevent invalid payloads at the UI layer.",
+          "Implemented Stripe Checkout together with webhook verification to ensure orders are only created after successful payment confirmation, preventing inconsistencies caused by interrupted client-side payment flows.",
+      },
+      {
+        title: "MongoDB + Mongoose",
+        reason:
+          "Used MongoDB for flexible document storage and Mongoose for schema validation, relationships, indexing, and maintainable data models suitable for a growing e-commerce application.",
+      },
+      {
+        title: "Reusable Component Architecture",
+        reason:
+          "Designed reusable UI components and modular server-side logic to improve maintainability, simplify future feature development, and encourage code reuse across the application.",
       },
     ],
+
     challenges: [
       {
-        challenge: "Keeping cart state synchronized across pages and refreshes",
+        challenge: "Guaranteeing data consistency during the checkout process.",
         solution:
-          "Centralized state in a dedicated store and persisted minimal cart data to ensure consistent hydration.",
+          "Integrated Stripe webhooks so orders are only persisted after Stripe confirms payment success, avoiding duplicate or incomplete orders caused by client-side interruptions.",
       },
       {
-        challenge: "Supporting localization without duplicating UI logic",
+        challenge: "Designing scalable authentication and authorization.",
         solution:
-          "Used locale-aware routing and translation dictionaries, while sharing the same reusable components.",
+          "Built authentication with Better Auth and implemented role-based access control to securely protect admin routes, dashboard features, and server-side operations.",
       },
       {
-        challenge: "Maintaining performance with rich product cards and filtering",
+        challenge: "Generating realistic development data.",
         solution:
-          "Optimized images and component rendering paths, and structured filtering logic for predictable updates.",
+          "Created a complete database seeding system that automatically generates users, categories, products, and coupons, allowing the application to be tested immediately after setup.",
+      },
+      {
+        challenge: "Maintaining a clean and scalable codebase.",
+        solution:
+          "Separated business logic, database operations, reusable components, and server actions into modular layers to keep the project organized and easy to extend.",
       },
     ],
-    screenshotsPath: "/projects/e-commerce-task",
-    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"],
+
+    screenshotsPath: "/projects/cartly",
+
+    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
+
     futureImprovements: [
-      "Stripe integration for production payments",
-      "Wishlist and saved carts across devices",
-      "Admin analytics dashboard for conversion tracking",
+      "Advanced product filtering and sorting",
+      "Product recommendation engine",
+      "Email notifications",
+      "Sales analytics dashboard",
+      "Inventory insights",
+      "Multi-language support",
+      "Multi-currency support",
+      "AI-powered product recommendations",
     ],
   },
   {
@@ -80,7 +134,14 @@ export const projectCaseStudies: IProjectDetails[] = [
     shortDescription:
       "Portfolio website featuring project filtering, structured case studies, and responsive design.",
 
-    tags: ["Portfolio", "Frontend", "Landing Page", "Responsive Design", "Animation", "Cursor"],
+    tags: [
+      "Portfolio",
+      "Frontend",
+      "Landing Page",
+      "Responsive Design",
+      "Animation",
+      "Cursor",
+    ],
 
     links: {
       demo: "https://amr-naseem.vercel.app",
@@ -108,12 +169,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Contact section with social links",
     ],
 
-    techs: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Cursor"
-    ],
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "Cursor"],
 
     technicalDecisions: [
       {
@@ -152,7 +208,7 @@ export const projectCaseStudies: IProjectDetails[] = [
     futureImprovements: [
       "Add animations and micro-interactions",
       "Integrate CMS for dynamic project management",
-      "Add blog section for content sharing"
+      "Add blog section for content sharing",
     ],
   },
   {
@@ -166,7 +222,7 @@ export const projectCaseStudies: IProjectDetails[] = [
     tags: ["Marketplace", "AI-powered", "Real-time", "React"],
 
     links: {
-      demo: "https://drive.google.com/drive/folders/13t5rKCWWb5APM5JtLn1weNdKe9kyWBnt?usp=drive_link#",
+      // demo: "https://drive.google.com/drive/folders/13t5rKCWWb5APM5JtLn1weNdKe9kyWBnt?usp=drive_link#",
       github: "https://github.com/AmrNasem/chatbroker",
     },
 
@@ -190,13 +246,7 @@ export const projectCaseStudies: IProjectDetails[] = [
       "Product owner dashboard with statistics and insights",
     ],
 
-    techs: [
-      "React",
-      "Redux Toolkit",
-      "Socket.io",
-      "REST API",
-      "CSS3",
-    ],
+    techs: ["React", "Redux Toolkit", "Socket.io", "REST API", "CSS3"],
 
     technicalDecisions: [
       {
@@ -218,7 +268,8 @@ export const projectCaseStudies: IProjectDetails[] = [
 
     challenges: [
       {
-        challenge: "Designing a flexible product system (sale / rent / exchange)",
+        challenge:
+          "Designing a flexible product system (sale / rent / exchange)",
         solution:
           "Created a unified product schema with multiple transaction modes and conditional logic for each workflow.",
       },
@@ -307,7 +358,15 @@ export const projectCaseStudies: IProjectDetails[] = [
     ],
 
     screenshotsPath: "/projects/e-learning",
-    screenshots: ["1.png", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg"],
+    screenshots: [
+      "1.png",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+    ],
 
     futureImprovements: [
       "Progress tracking and course completion",
@@ -329,21 +388,28 @@ export const projectCaseStudies: IProjectDetails[] = [
     },
     featured: false,
     thumbnail: "/projects/gamer-portfolio/1.jpeg",
-    problem: "Traditional portfolio templates can look generic and fail to communicate a strong visual identity.",
+    problem:
+      "Traditional portfolio templates can look generic and fail to communicate a strong visual identity.",
     solution:
       "I built a custom gaming-inspired UI with animation and section pacing to create a memorable user journey.",
-    features: ["Animated hero sections", "Smooth in-page navigation", "High-contrast visual design"],
+    features: [
+      "Animated hero sections",
+      "Smooth in-page navigation",
+      "High-contrast visual design",
+    ],
     techs: ["HTML5", "CSS3", "JavaScript"],
     technicalDecisions: [
       {
         title: "Vanilla JavaScript",
-        reason: "Kept the stack minimal to focus on direct control of interactions and performance.",
+        reason:
+          "Kept the stack minimal to focus on direct control of interactions and performance.",
       },
     ],
     challenges: [
       {
         challenge: "Balancing animation richness and smooth rendering",
-        solution: "Reduced expensive effects and optimized transition timing for better frame consistency.",
+        solution:
+          "Reduced expensive effects and optimized transition timing for better frame consistency.",
       },
     ],
     screenshotsPath: "/projects/gamer-portfolio",
@@ -361,7 +427,8 @@ export const projectCaseStudies: IProjectDetails[] = [
       demo: "https://valot.netlify.app",
     },
     thumbnail: "/projects/valot/1.jpeg",
-    problem: "Small agencies need websites that communicate service value quickly and build trust in seconds.",
+    problem:
+      "Small agencies need websites that communicate service value quickly and build trust in seconds.",
     solution:
       "I crafted conversion-oriented content sections and reusable UI blocks with strong visual hierarchy.",
     features: ["Service highlights", "Case snippets", "CTA-focused layouts"],
@@ -369,13 +436,15 @@ export const projectCaseStudies: IProjectDetails[] = [
     technicalDecisions: [
       {
         title: "CSS Modules",
-        reason: "Improves style isolation for rapidly iterated landing-page sections.",
+        reason:
+          "Improves style isolation for rapidly iterated landing-page sections.",
       },
     ],
     challenges: [
       {
         challenge: "Maintaining consistency across many marketing sections",
-        solution: "Established reusable section patterns and shared spacing/typography conventions.",
+        solution:
+          "Established reusable section patterns and shared spacing/typography conventions.",
       },
     ],
     screenshotsPath: "/projects/valot",
@@ -395,7 +464,7 @@ export const projectCaseStudies: IProjectDetails[] = [
 
     links: {
       demo: "https://amrnasem.github.io/SpecialDesign",
-      github: "http://github.com/AmrNasem/SpecialDesign"
+      github: "http://github.com/AmrNasem/SpecialDesign",
     },
 
     thumbnail: "/projects/special-design/1.jpg",
@@ -429,7 +498,16 @@ export const projectCaseStudies: IProjectDetails[] = [
       },
     ],
     screenshotsPath: "/projects/special-design",
-    screenshots: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
+    screenshots: [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg",
+      "8.jpg",
+    ],
 
     futureImprovements: [
       "Add animations and micro-interactions",
